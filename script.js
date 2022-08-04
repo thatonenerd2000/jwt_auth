@@ -1,13 +1,15 @@
 var handleSubmit = function () {
     var username = document.getElementById("username").value;
-    var data = {
-        username: username
-    };
-    fetch('http://localhost:8000/jwt', {
-        method: 'POST',
+    fetch("http://localhost:8000/jwt", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify({ data: data })
+        body: JSON.stringify({ username: username })
+    }).then(function (res) {
+        return res.json().then(function (data) {
+            document.getElementById("encodedDis").innerHTML = data.encoded;
+            document.getElementById("decodedDis").innerHTML = data.payload.username;
+        });
     });
 };
