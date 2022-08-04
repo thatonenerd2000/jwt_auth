@@ -9,10 +9,26 @@
     <script src="./script.js"></script>
 </head>
 <body>
+    <h1>JWT Auth</h1>
     <input type="username" id="username" placeholder="username">
     <button onclick="handleSubmit()" id="login">Login</button>
     <br>
     <p>encoded: <span id="encodedDis"></span></p>
     <p>decoded: <span id="decodedDis"></span></p>
+
+    <hr>
+
+    <h1>Bcrypt Hash</h1>
+    <input type="password" id="password" placeholder="password">
+    <button onclick="handleBcrypt()" id="login">Send Data</button>
+    <br>
+    <p>password_plain: <span id="passwordDis"></span></p>
+    <p>password_utf: <span id="passwordUtfDis"></span></p>
+    <p>salt: <span id="span"></span></p>
+    <p>hashed: <span id="hashed"></span></p>
+    <br>
+    <h2>Revert Pass</h2>
+    <button onclick="getPass()">Get Pass Back</button>
+    <p>password_back: <span id="passBack"></span></p>
 </body>
 </html>
