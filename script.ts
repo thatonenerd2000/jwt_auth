@@ -1,6 +1,6 @@
 const handleSubmit = () => {
   let username: string = (document.getElementById("username") as HTMLInputElement).value;
-  fetch("http://localhost:8000/jwt", {
+  fetch("https://fast-headland-19851.herokuapp.com/jwt", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +18,7 @@ let hashed: string = "";
 
 const handleBcrypt = () => {
   let password: string = (document.getElementById("password") as HTMLInputElement).value;
-  fetch("http://localhost:8000/bcrypt", {
+  fetch("https://fast-headland-19851.herokuapp.com/bcrypt", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const getPass = () => {
     password: (document.getElementById("password") as HTMLInputElement).value,
     hashed: hashed,
   };
-  fetch("http://localhost:8000/decode", {
+  fetch("https://fast-headland-19851.herokuapp.com/decode", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
